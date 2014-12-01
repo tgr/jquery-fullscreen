@@ -167,6 +167,28 @@
 			return this;
 		}
 	};
+	
+	/**
+	 * Return a jQuery wrapper for the fullscreened element (or an empty
+	 * wrapper if there is no such element).
+	 * @return {jQuery}
+	 */
+	$.fullscreenElement = function () {
+		var fullscreenElement = document.fullscreenElement ||
+			document.webkitFullscreenElement ||
+			document.mozFullScreenElement ||
+			document.msFullscreenElement;
+
+		return $( fullscreenElement );
+	};
+	
+	/**
+	 * True iff the document is in fullscreen mode.
+	 * @return {boolean}
+	 */
+	$.isFullscreened = function () {
+		return $.fullscreenElement().length !== 0;
+	};
 
 	$.support.fullscreen = document.fullscreenEnabled ||
 		document.webkitFullscreenEnabled ||
