@@ -29,10 +29,7 @@
 	 * Also remove the 'fullscreened' class from elements that are no longer fullscreen
 	 */
 	function handleFullscreenChange () {
-		var fullscreenElement = document.fullscreenElement ||
-			document.mozFullScreenElement ||
-			document.webkitFullscreenElement ||
-			document.msFullscreenElement;
+		var fullscreenElement = $.fullscreenElement().get(0);
 
 		if ( !fullscreenElement ) {
 			$( '.' + fsClass ).data( 'isFullscreened', false ).removeClass( fsClass );
@@ -82,13 +79,8 @@
 	 * @return {jQuery}
 	 */
 	function exitFullscreen () {
-		var fullscreenElement = ( document.fullscreenElement ||
-				document.mozFullScreenElement ||
-				document.webkitFullscreenElement ||
-				document.msFullscreenElement );
-
 		// Ensure that we only exit fullscreen if exitFullscreen() is being called on the same element that is currently fullscreen
-		if ( fullscreenElement && this.get(0) === fullscreenElement ) {
+		if ( $.fullscreenElement().is( this.first() ) ) {
 			if ( document.exitFullscreen ) {
 				document.exitFullscreen();
 			} else if ( document.mozCancelFullScreen ) {

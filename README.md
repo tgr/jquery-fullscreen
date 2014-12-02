@@ -12,6 +12,12 @@ $element.enterFullscreen();
 
 // Then take it out of fullscreen
 $element.exitFullscreen();
+
+// Get the root element in fullscreen mode
+$element = $.fullscreenElement();
+
+// Check for fullscreen mode
+if ( $.isFullscreened() ) ...
 ```
 
 Events you can listen for:
