@@ -159,7 +159,7 @@
 			return this;
 		}
 	};
-	
+
 	/**
 	 * Return a jQuery wrapper for the fullscreened element (or an empty
 	 * wrapper if there is no such element).
@@ -173,7 +173,7 @@
 
 		return $( fullscreenElement );
 	};
-	
+
 	/**
 	 * True iff the document is in fullscreen mode.
 	 * @return {boolean}
