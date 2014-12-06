@@ -1,10 +1,16 @@
 {
   "name": "jquery-fullscreen",
   "version": "2.1.0",
+  "description": "Fullscreen plugin for jQuery."
   "homepage": "https://github.com/theopolisme/jquery-fullscreen",
+  "keywords": ["jquery", "fullscreen"],
   "repository": {
     "type": "git",
     "url": "git://github.com/theopolisme/jquery-fullscreen"
+  },
+  "bugs": "git://github.com/theopolisme/jquery-fullscreen/issues",
+  "license": {
+    "license": "GPL-2.0"
   },
   "scripts": {
     "test": "grunt test"
