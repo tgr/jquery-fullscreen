@@ -2,6 +2,7 @@
 module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-jscs-checker' );
+	grunt.loadNpmTasks('grunt-contrib-qunit');
 
 	grunt.initConfig({
 		jshint: {
@@ -9,9 +10,12 @@ module.exports = function ( grunt ) {
 		},
 		jscs: {
 			all: '<%= jshint.all %>'
+		},
+		qunit: {
+			all: ['test/index.html']
 		}
 	});
 
-	grunt.registerTask('test', ['jshint', 'jscs']);
+	grunt.registerTask('test', ['jshint', 'jscs', 'qunit']);
 	grunt.registerTask('default', ['test']);
 };
